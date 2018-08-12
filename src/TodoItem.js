@@ -6,15 +6,16 @@ import TodoInput from './TodoInput';
 
 const TodoItem = (props) => {
 
-	let todos = props.todos .map((item, i) => {
+	let todos = props.todos.map((item, i) => {
 		return (
 			<List 
 				key={item.uuid} 
 				handleDoubleClick={() => props.handleDoubleClick(item)}
+				toggleCheck={props.toggleCheck}
 				editing={props.editing} 
 				editValue={props.editValue}
 				edit={props.edit}
-				item={item.todo} 
+				item={item} 
 				_id={item.uuid}
 				onChange={props.onChange}
 				onRemove={props.onRemove}

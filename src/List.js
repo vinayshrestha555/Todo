@@ -1,7 +1,8 @@
 import React from 'react';
 
-import Button from './Button';
 import Input from './Input'
+import Button from './Button';
+import Checkbox from './Checkbox'
 
 const List = (props) => {
    if(props.editing === props.item.uuid) {
@@ -11,7 +12,7 @@ const List = (props) => {
    }
    return (
          <li onDoubleClick={props.handleDoubleClick} >
-            <Input onChange={() => props.toggleCheck(props.item.uuid)} type="checkbox" checked="true" />
+            <Checkbox onChange={() => props.toggleCheck(props.item.uuid)} isChecked={props.item.isComplete ? true : false} />
             <span className={props.item.isComplete ? 'complete' : 'active'}>{props.item.todo} </span>
             <Button 
                data={props.item.uuid} 
